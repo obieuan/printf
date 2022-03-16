@@ -1,32 +1,61 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
 /**
- * print_numbers -
- * @format:
- * Return:
+ * print_numbers - aca va algo
+ * @format: formatp
+ * Return: tanaño del strings
  */
 int _printf(const char *format, ...)
 {
-    int i = 0, contador = 0;
-    
-    if (format == NULL)
-    {
-        return (-1);
-    }
-    va_list lista;
-    int (*lista_nueva)(va_list);
+	int size = 0;
+	int numarg = 0;
+	int arglist = 0;
+	int i, l, o;
+	va_list lista;
+	int nums[2];
 
-    while (format[i])
-    {
-        for (i = 0; format[i] != '%' && format[i]; i++)
-        {
-            putchar(format[i]);
-            contador++;
-        }
-        if(!format[i])
-        {
-            return (contador);
-        }
-        
-    }
-    
+	if (format == NULL)
+	{
+		return (-1);
+	}
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
+		{
+			numarg = numarg + 1;
+		}
+		size = size + 1;
+	}
+
+	va_start(lista, format);
+	for (l = 0; l < 2; l++)
+	{
+		nums[l] = va_arg(lista, int);
+	}
+	va_end(lista);
+
+	for (o = 0; format[o] != '\0'; o++)
+	{
+		if (format[o] == '%')
+		{
+			if (format[o + 1] == 'd')
+			{
+				printf("%d", nums[arglist]);
+				arglist = arglist + 1;
+			}
+			if (format[o + 1] == 'i')
+			{
+				printf("%i", nums[arglist]);
+				arglist = arglist + 1;
+			}
+			o = o + 1;
+		}
+		else
+		{
+			putchar(format[o]);
+		}
+	}
+	return (size);
 }
