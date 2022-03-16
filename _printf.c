@@ -8,7 +8,7 @@
  * @nums: nums
  * Return: nothing
  */
-void imprimir(const char *format, int *nums[], ...)
+void imprimir(const char *format, int nums[], ...)
 {
 	int o = 0;
 	int arglist = 0;
@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 {
 	int size = 0;
 	int numarg = 0;
-	int i, l, o;
+	int i, l;
 	va_list lista;
 	int nums[2];
 
@@ -69,7 +69,7 @@ int _printf(const char *format, ...)
 	}
 	va_end(lista);
 
-	imprimir(&format, &nums);
+	imprimir(format, nums);
 
 	return (size);
 }
