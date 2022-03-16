@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 	int numarg = 0;
 	int i, l;
 	va_list lista;
-	int nums[2];
+	int *ptr;
 
 	if (format == NULL)
 	{
@@ -63,13 +63,14 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(lista, format);
+	ptr = (int *) malloc(numarg * sizeof(int));
 	for (l = 0; l < 2; l++)
 	{
-		nums[l] = va_arg(lista, int);
+		ptr[l] = va_arg(lista, int);
 	}
 	va_end(lista);
 
-	imprimir(format, nums);
+	imprimir(format, ptr);
 
 	return (size);
 }
