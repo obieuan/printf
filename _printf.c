@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 	}
 	va_end(lista);
 
-	imprimir(format, ptr);
+	imprimir(format, ptrs);
 
 	return (size);
 }
