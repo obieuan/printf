@@ -1,0 +1,18 @@
+NAME
+    El nombre del comando o función, seguida por una descripción de qué es.
+SYNOPSIS
+    En caso de ser un comando, debes aportar una descripción formal cómo ejecutar éste y de las opciones.
+DESCRIPTION
+    Descripción textual del comando o función.
+EXAMPLES
+    Un ejemplo de cómo se usa.
+EXIT VALUES
+     Posibles códigos de retorno y su significado. 
+SEE ALSO
+    Una lista de comandos relacionados o funciones.
+BUGS
+    Lista de bugs conocidos.
+FILES
+    Lista de archivos incluidos en el paquete.
+AUTHOR
+   Información del desarrollador o contacto.
