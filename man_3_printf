@@ -1,18 +1,22 @@
 NAME
-    El nombre del comando o función, seguida por una descripción de qué es.
+    
 SYNOPSIS
-    En caso de ser un comando, debes aportar una descripción formal cómo ejecutar éste y de las opciones.
+    _printf("TEXT %FORMAT", [ARGUMENTS ...)
 DESCRIPTION
-    Descripción textual del comando o función.
+       Produces output according to a format (writes the output to stdout, the standard output stream), and returns: the number of characters printed (excluding the null byte used to end the output in strings)
 EXAMPLES
-    Un ejemplo de cómo se usa.
+    _printf("Hello") // _printf("num=%d", 5)
 EXIT VALUES
-     Posibles códigos de retorno y su significado. 
+    -1 = format is null
+    number of text characters
 SEE ALSO
-    Una lista de comandos relacionados o funciones.
+    printf
+    #include <stdarg.h>
 BUGS
-    Lista de bugs conocidos.
+
 FILES
-    Lista de archivos incluidos en el paquete.
+    _printf.c
+    main.h
 AUTHOR
-   Información del desarrollador o contacto.
+   UCIX210
+    obieuan
