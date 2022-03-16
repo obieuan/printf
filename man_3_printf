@@ -1,5 +1,5 @@
 NAME
-    
+    _printf
 SYNOPSIS
     _printf("TEXT %FORMAT", [ARGUMENTS ...)
 DESCRIPTION
